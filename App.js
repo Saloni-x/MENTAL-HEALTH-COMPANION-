@@ -1,7 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-
-// Pages import karenge
 import Home from "./pages/Home";
 import Chat from "./pages/Chat";
 import MoodTracker from "./pages/MoodTracker";
