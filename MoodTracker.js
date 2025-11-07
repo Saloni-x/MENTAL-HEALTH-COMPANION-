@@ -1,4 +1,3 @@
-// src/pages/MoodTracker.js
 import React, { useState } from "react";
 import { Bar } from "react-chartjs-2";
 import {
@@ -11,7 +10,6 @@ import {
   Legend
 } from "chart.js";
 
-// Chart.js register karna zaruri hai
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 function MoodTracker() {
@@ -19,28 +17,24 @@ function MoodTracker() {
   const [labels, setLabels] = useState([]);
   const [count, setCount] = useState(1);
 
-  // Mood add karne ka function
   const addMood = (mood) => {
     setMoods([...moods, mood]);
     setLabels([...labels, `Day ${count}`]);
     setCount(count + 1);
   };
 
-  // Chart ka data
   const data = {
     labels: labels,
     datasets: [
       {
         label: "Mood Levels",
-        data: moods,
-        backgroundColor: moods.map((m) =>
-          m === 1 ? "#f87171" : m === 2 ? "#facc15" : "#4ade80"
-        ), // Red = Sad, Yellow = Stress, Green = Happy
+   data: moods,
+  backgroundColor: moods.map((m) =>
+ m === 1 ? "#f87171" : m === 2 ? "#facc15" : "#4ade80"
+        ), 
       },
     ],
   };
-
-  // Chart options
   const options = {
     responsive: true,
     plugins: {
@@ -66,7 +60,7 @@ function MoodTracker() {
 
   return (
     <div style={{ padding: "20px" }}>
-      <h2>Mood Tracker 📊 (Bar Graph)</h2>
+      <h2>Mood Tracker (Bar Graph)</h2>
 
       {/* Mood Buttons */}
       <div style={{ marginBottom: "20px" }}>
@@ -86,5 +80,6 @@ function MoodTracker() {
     </div>
   );
 }
+
 
 export default MoodTracker;
