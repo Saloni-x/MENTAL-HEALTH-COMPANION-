@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from "react";+-
 import axios from "axios";
 
 function Chat() {
@@ -10,13 +10,13 @@ function Chat() {
       const res = await axios.post("http://localhost:5000/chat", { message });
       setReply(res.data.reply);
     } catch (error) {
-      setReply("Error connecting to server ❌");
+      setReply("Error connecting to server ");
     }
   };
 
   return (
     <div style={{ padding: "20px" }}>
-      <h2>Chat with Bot 🤖</h2>
+      <h2>Chat with Bot </h2>
       <input
         type="text"
         value={message}
@@ -28,5 +28,6 @@ function Chat() {
     </div>
   );
 }
+
 
 export default Chat;
